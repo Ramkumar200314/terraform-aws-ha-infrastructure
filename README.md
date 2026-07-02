@@ -1,24 +1,21 @@
-# Terraform AWS Web Application Project
+## 🏗️ Architecture
 
-## Project Overview
-This project automates the deployment of a highly available web application architecture on AWS using Terraform.
+![AWS HA Architecture](images/architecture.png)
 
-### Architecture:
-- 1 VPC
-- 2 Subnets in different Availability Zones
-- 2 EC2 Web Servers (Amazon Linux 2)
-- 1 Security Group (SSH + HTTP)
-- 1 Application Load Balancer (ALB)
-- 1 Target Group + Listener
+## 💡 Key Concepts Demonstrated
 
-## Steps to Deploy
-1. Clone this repo
-2. Run `terraform init`
-3. Run `terraform plan`
-4. Run `terraform apply` and type `yes`
-5. Access the web app using the ALB DNS output
+- **Remote-ready IaC** — Full infrastructure lifecycle managed via 
+  `terraform init → plan → apply → destroy`
+- **High Availability** — Multi-AZ deployment across 2 subnets ensures 
+  no single point of failure
+- **Load Balancing** — ALB distributes traffic across EC2 instances 
+  with health checks
+- **Security** — Security groups restrict access to SSH and HTTP only
+- **Cost Conscious** — Resources destroyed after testing using 
+  `terraform destroy` to avoid unnecessary AWS charges
 
-## To Destroy the Resources
-
-```bash
-terraform destroy
+## 📝 Note on AWS Account
+Resources were deployed and validated on AWS, then destroyed using 
+`terraform destroy` to avoid ongoing costs. 
+The Terraform code is fully functional and can be redeployed 
+on any AWS account using the steps below.
