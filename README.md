@@ -19,3 +19,4 @@ Resources were deployed and validated on AWS, then destroyed using
 `terraform destroy` to avoid ongoing costs. 
 The Terraform code is fully functional and can be redeployed 
 on any AWS account using the steps below.
+ ✅ Infrastructure tested and verified — resources destroyed after validation to avoid AWS charges.
